@@ -1,9 +1,10 @@
-module "k8mmm" {
+module "o2qqq" {
   source = "app.terraform.io/manderson-it/module/vault"
-  version = "1.0.5"
+  version = "1.1.3"
   providers = {
     vault = vault.platform-services
   }
 
-  lp = "k8mmm"
+  lp = "o2qqq"
+  cluster_name = ["klab"]
 }
