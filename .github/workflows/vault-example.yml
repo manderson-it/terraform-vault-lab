@@ -1,0 +1,23 @@
+name: VaultTest
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    build:
+        steps:
+            - uses: bjerkio/vault-action@v1.2.1
+              with:
+                endpoint: 'https://one.manderson-it.team.arctiq.ca'
+                path: 'kv/data/hello-world'
+            - run: echo "${{ toJson(steps.vault.outputs.secret) }}" 
+
